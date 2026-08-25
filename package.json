@@ -1,0 +1,14 @@
+{
+  "name": "pandora",
+  "private": true,
+  "description": "תיבת פנדורה — מיזם ללא מטרות רווח לקידום שוויון בגישה לצדק בישראל",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "test": "npm run test --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  }
+}
