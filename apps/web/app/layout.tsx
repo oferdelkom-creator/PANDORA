@@ -9,7 +9,7 @@ const assistant = Assistant({
 });
 
 export const metadata: Metadata = {
-  title: 'תיבת פנדורה',
+  title: 'דין ודברים',
   description:
     'בדיקה חינמית: האם עוד אפשר לבטל פסק דין או להתנגד בהוצאה לפועל, וכמה זמן נותר.',
 };

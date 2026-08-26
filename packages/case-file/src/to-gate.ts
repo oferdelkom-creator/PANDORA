@@ -15,7 +15,7 @@ import type {
   ExecutionObjectionFacts,
   ServiceStatus,
   IsoDate,
-} from '@pandora/deadline-gate';
+} from '@din/deadline-gate';
 import type { CaseFile } from './case-file';
 import { readConfirmed } from './types';
 

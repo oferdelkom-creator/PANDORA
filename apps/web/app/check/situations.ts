@@ -1,4 +1,4 @@
-import type { TrackId } from '@pandora/deadline-gate';
+import type { TrackId } from '@din/deadline-gate';
 
 /**
  * המיפוי בין איך אדם מתאר את מצבו לבין המסלול המשפטי.

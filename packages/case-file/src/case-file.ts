@@ -5,7 +5,7 @@
  * קיים כאן מפני שהוא קיים שם, והמשתמשים של המיזם מחזיקים דווקא את
  * המסמכים הישנים.
  */
-import type { IsoDate } from '@pandora/deadline-gate';
+import type { IsoDate } from '@din/deadline-gate';
 import type { Extracted } from './types';
 import type { CaseNumber } from './case-number';
 import type { CourtLevel, ProceedingType } from './proceedings';

@@ -1,4 +1,4 @@
-# תיבת פנדורה — שער המועדים
+# דין ודברים — שער המועדים
 
 מנוע כללים דטרמיניסטי שמכריע אם קיים מסלול משפטי פתוח, וכמה זמן נותר.
 
@@ -46,7 +46,7 @@
 ## שימוש
 
 ```ts
-import { defaultJudgmentTrack } from '@pandora/deadline-gate';
+import { defaultJudgmentTrack } from '@din/deadline-gate';
 
 const result = defaultJudgmentTrack.evaluate({
   today: '2026-08-25',

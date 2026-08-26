@@ -1,7 +1,7 @@
 {
-  "name": "pandora",
+  "name": "din-vedvarim",
   "private": true,
-  "description": "תיבת פנדורה — מיזם ללא מטרות רווח לקידום שוויון בגישה לצדק בישראל",
+  "description": "דין ודברים — מיזם ללא מטרות רווח לקידום שוויון בגישה לצדק בישראל",
   "type": "module",
   "workspaces": [
     "packages/*",

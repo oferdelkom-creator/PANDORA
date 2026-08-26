@@ -8,7 +8,7 @@
  * אזהרה: קידומות ההליכים והשיוך שלהן טעונים אימות, כמו כל קביעה
  * משפטית במיזם. ראה docs/legal-verification-backlog.md.
  */
-import type { TrackId } from '@pandora/deadline-gate';
+import type { TrackId } from '@din/deadline-gate';
 
 export type CourtLevel =
   | 'magistrate'   // שלום

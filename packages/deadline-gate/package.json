@@ -1,7 +1,7 @@
 {
-  "name": "@pandora/deadline-gate",
+  "name": "@din/deadline-gate",
   "version": "0.1.0",
-  "description": "שער המועדים של תיבת פנדורה — מנוע כללים דטרמיניסטי למועדים וכשירות",
+  "description": "שער המועדים של דין ודברים — מנוע כללים דטרמיניסטי למועדים וכשירות",
   "main": "./src/index.ts",
   "scripts": {
     "build": "tsc",

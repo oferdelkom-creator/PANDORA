@@ -9,7 +9,7 @@ import {
   type GateResult,
   type ServiceStatus,
   type TrackId,
-} from '@pandora/deadline-gate';
+} from '@din/deadline-gate';
 import { SITUATIONS } from './situations';
 import { ChoiceField, DateField, PrimaryButton, Question } from './fields';
 import Report from './Report';

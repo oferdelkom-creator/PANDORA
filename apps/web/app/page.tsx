@@ -10,7 +10,7 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <main className="mx-auto max-w-2xl px-6 py-16 sm:py-24">
-      <p className="text-sm font-medium tracking-wide text-brand">תיבת פנדורה</p>
+      <p className="text-sm font-medium tracking-wide text-brand">דין ודברים</p>
 
       <h1 className="mt-6 text-4xl leading-tight font-bold text-balance sm:text-5xl">
         קיבלת פסק דין או עיקול שלא ידעת עליו?

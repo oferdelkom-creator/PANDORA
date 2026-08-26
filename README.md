@@ -1,4 +1,4 @@
-# תיבת פנדורה
+# דין ודברים
 
 מיזם ללא מטרות רווח לקידום שוויון בגישה לצדק בישראל.
 
@@ -40,7 +40,7 @@ docs/                     התוכנית העסקית וחוב האימות המ
 ```
 npm install
 npm test        # 56 בדיקות
-npm run dev -w @pandora/web
+npm run dev -w @din/web
 npm run typecheck
 ```
 

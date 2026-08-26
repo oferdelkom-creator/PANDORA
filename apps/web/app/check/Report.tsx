@@ -1,6 +1,6 @@
 'use client';
 
-import { formatHe, type GateResult, type GateStatus } from '@pandora/deadline-gate';
+import { formatHe, type GateResult, type GateStatus } from '@din/deadline-gate';
 
 /**
  * הדוח.

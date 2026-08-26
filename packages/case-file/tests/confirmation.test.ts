@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { defaultJudgmentTrack } from '@pandora/deadline-gate';
+import { defaultJudgmentTrack } from '@din/deadline-gate';
 import { extracted, fromUser, confirm, correct, readConfirmed } from '../src/types';
 import { pendingConfirmation, inconsistencies, type CaseFile } from '../src/case-file';
 import { toDefaultJudgmentFacts } from '../src/to-gate';
