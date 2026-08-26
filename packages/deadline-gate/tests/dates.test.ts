@@ -34,3 +34,12 @@ describe('אריתמטיקה של תאריכים', () => {
     expect(isSaturday('2026-02-08')).toBe(false);
   });
 });
+
+import { formatHe } from '../src/dates';
+
+describe('formatHe', () => {
+  it('ממיר ל-DD.MM.YYYY כדי שהתאריך לא יתהפך בטקסט RTL', () => {
+    expect(formatHe('2026-10-13')).toBe('13.10.2026');
+    expect(formatHe('2026-01-05')).toBe('05.01.2026');
+  });
+});

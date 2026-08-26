@@ -24,6 +24,13 @@ describe('ביטול פסק דין שניתן במעמד צד אחד', () => {
     expect(r.deadline!.daysRemaining).toBeGreaterThanOrEqual(0);
   });
 
+  it('מציג תאריכים בפורמט עברי בטקסט ההנמקה', () => {
+    const r = evaluate(base);
+    const text = r.reasoning.map((s) => s.he).join(' ');
+    expect(text).toContain('05.01.2026');
+    expect(text).not.toContain('2026-01-05');
+  });
+
   it('סוגר את המסלול כשהמועד חלף — ותמיד עם הסתעפות', () => {
     const r = evaluate({ ...base, today: '2026-06-01' });
     expect(r.status).toBe('closed');

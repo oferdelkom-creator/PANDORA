@@ -10,7 +10,7 @@
 import type { GateResult, ReasoningStep } from '../../types';
 import type { BaseFacts, ServiceStatus, Track } from '../types';
 import { computeDeadline } from '../../engine/deadline';
-import { daysBetween, isIsoDate } from '../../dates';
+import { daysBetween, isIsoDate, formatHe } from '../../dates';
 import { EXECUTION_LAW_81A1, INTERPRETATION_LAW_10 } from '../sources';
 import { extensionOfTime, serviceDefect, pareati, NON_LITIGATION_ROUTES } from '../branches';
 
@@ -88,17 +88,17 @@ export function evaluate(facts: ExecutionObjectionFacts): GateResult {
   } else if (daysRemaining < 0) {
     status = 'closed';
     reasoning.push({
-      he: `המועד חלף ביום ${deadline.lastDate}, לפני ${Math.abs(daysRemaining)} ימים.`,
+      he: `המועד חלף ביום ${formatHe(deadline.lastDate)}, לפני ${Math.abs(daysRemaining)} ימים.`,
     });
     branches.push(
       extensionOfTime('אפשר לבקש הארכת מועד להגשת ההתנגדות. זהו שיקול דעת ולא זכות.'),
     );
   } else if (daysRemaining <= URGENT_THRESHOLD_DAYS) {
     status = 'closing_soon';
-    reasoning.push({ he: `נותרו ${daysRemaining} ימים בלבד, עד ${deadline.lastDate}.` });
+    reasoning.push({ he: `נותרו ${daysRemaining} ימים בלבד, עד ${formatHe(deadline.lastDate)}.` });
   } else {
     status = 'open';
-    reasoning.push({ he: `נותרו ${daysRemaining} ימים, עד ${deadline.lastDate}.` });
+    reasoning.push({ he: `נותרו ${daysRemaining} ימים, עד ${formatHe(deadline.lastDate)}.` });
   }
 
   if (facts.claimsDebtPaid) {

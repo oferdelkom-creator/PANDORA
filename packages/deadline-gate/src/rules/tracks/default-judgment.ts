@@ -19,7 +19,7 @@
 import type { GateResult, ReasoningStep, Branch } from '../../types';
 import type { BaseFacts, ServiceStatus, Track } from '../types';
 import { computeDeadline } from '../../engine/deadline';
-import { daysBetween, isIsoDate } from '../../dates';
+import { daysBetween, isIsoDate, formatHe } from '../../dates';
 import {
   TAKSADA_2018_SETTING_ASIDE,
   TAKSADA_2018_VACATIONS,
@@ -124,7 +124,7 @@ export function evaluate(facts: DefaultJudgmentFacts): GateResult {
 
   const reasoning: ReasoningStep[] = [
     {
-      he: `פסק הדין ניתן ב-${facts.judgmentDate} בהיעדר הגנה או בהיעדר התייצבות. החוק נותן ${STATUTORY_DAYS} ימים להגיש בקשה לביטולו.`,
+      he: `פסק הדין ניתן ב-${formatHe(facts.judgmentDate)} בהיעדר הגנה או בהיעדר התייצבות. החוק נותן ${STATUTORY_DAYS} ימים להגיש בקשה לביטולו.`,
       sources: [TAKSADA_2018_SETTING_ASIDE],
     },
     { he: reason },
@@ -172,7 +172,7 @@ export function evaluate(facts: DefaultJudgmentFacts): GateResult {
   } else if (daysRemaining < 0) {
     status = 'closed';
     reasoning.push({
-      he: `המועד להגשת הבקשה חלף ביום ${deadline.lastDate}, לפני ${Math.abs(daysRemaining)} ימים. המסלול הרגיל סגור.`,
+      he: `המועד להגשת הבקשה חלף ביום ${formatHe(deadline.lastDate)}, לפני ${Math.abs(daysRemaining)} ימים. המסלול הרגיל סגור.`,
     });
     branches.push(
       extensionOfTime(
@@ -185,12 +185,12 @@ export function evaluate(facts: DefaultJudgmentFacts): GateResult {
   } else if (daysRemaining <= URGENT_THRESHOLD_DAYS) {
     status = 'closing_soon';
     reasoning.push({
-      he: `נותרו ${daysRemaining} ימים בלבד, עד ${deadline.lastDate}. זהו לוח זמנים דחוף — פנייה לעורך דין או לסיוע המשפטי צריכה להיעשות היום.`,
+      he: `נותרו ${daysRemaining} ימים בלבד, עד ${formatHe(deadline.lastDate)}. זהו לוח זמנים דחוף — פנייה לעורך דין או לסיוע המשפטי צריכה להיעשות היום.`,
     });
   } else {
     status = 'open';
     reasoning.push({
-      he: `נותרו ${daysRemaining} ימים, עד ${deadline.lastDate}.`,
+      he: `נותרו ${daysRemaining} ימים, עד ${formatHe(deadline.lastDate)}.`,
     });
   }
 

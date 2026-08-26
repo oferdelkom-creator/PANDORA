@@ -10,6 +10,7 @@
  */
 export * from './types';
 export { computeDeadline } from './engine/deadline';
+export { formatHe } from './dates';
 export type { DeadlineInput, DeadlineOutput } from './engine/deadline';
 export { COURT_VACATIONS, vacationOn, tableCovers } from './vacations';
 export type { CourtVacation } from './vacations';

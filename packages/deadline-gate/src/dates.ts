@@ -42,3 +42,16 @@ export function dayOfWeek(date: IsoDate): number {
 export function isSaturday(date: IsoDate): boolean {
   return dayOfWeek(date) === 6;
 }
+
+/**
+ * תאריך לתצוגה בעברית: 13.10.2026.
+ *
+ * למה לא ISO: מחרוזת כמו "2026-10-13" בתוך פסקה בעברית עוברת סידור
+ * מחדש על ידי האלגוריתם הדו-כיווני, כי המקף הוא תו ניטרלי — והקורא
+ * רואה סדר אחר ממה שנכתב. נקודה בין ספרות מחזיקה את המספר כרצף אחד
+ * ולכן התאריך נשאר יציב.
+ */
+export function formatHe(date: IsoDate): string {
+  const [year, month, day] = date.split('-');
+  return `${day}.${month}.${year}`;
+}

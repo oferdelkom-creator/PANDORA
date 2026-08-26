@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+/*
+ * שפת העיצוב: שקטה ורצינית.
+ *
+ * הפונים לאתר הזה נמצאים במצוקה — עיקול, חוב, פסק דין שלא ידעו עליו.
+ * ממשק חגיגי או "שיווקי" קורא כזלזול. הבחירות כאן הן טיפוגרפיה גדולה,
+ * ניגודיות גבוהה, מעט צבע, והרבה מרווח.
+ */
+@theme {
+  --font-sans: var(--font-assistant), ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #14171a;
+  --color-ink-soft: #4a5157;
+  --color-ink-faint: #7b838a;
+  --color-paper: #fbfaf8;
+  --color-surface: #ffffff;
+  --color-line: #e4e1dc;
+
+  --color-brand: #1f4f4a;
+  --color-brand-soft: #eaf2f0;
+
+  /* סטטוסים. "סגור" אינו אדום במכוון: לפי סעיף 3.2 בתוכנית זו תשובה
+     לגיטימית ונפוצה, לא כישלון ולא אזעקה. */
+  --color-open: #1f6f4a;
+  --color-open-soft: #e8f4ee;
+  --color-urgent: #8a5200;
+  --color-urgent-soft: #fdf3e2;
+  --color-closed: #4a5157;
+  --color-closed-soft: #f0efec;
+  --color-review: #2f4d80;
+  --color-review-soft: #eaf0f9;
+}
+
+/* מצב כהה: דריסת אותם משתנים ב-CSS רגיל. @theme אינו יכול לשבת בתוך
+   media query, והיוטיליטיז של Tailwind ממילא קוראות את המשתנה. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-ink: #f2f0ed;
+    --color-ink-soft: #b3b8bc;
+    --color-ink-faint: #858b91;
+    --color-paper: #131517;
+    --color-surface: #1b1e21;
+    --color-line: #2e3236;
+
+    --color-brand: #7fc4b8;
+    --color-brand-soft: #1b2b29;
+
+    --color-open: #6cc094;
+    --color-open-soft: #16271f;
+    --color-urgent: #d9a441;
+    --color-urgent-soft: #2a2113;
+    --color-closed: #b3b8bc;
+    --color-closed-soft: #212427;
+    --color-review: #8fb0e0;
+    --color-review-soft: #1a2233;
+  }
+}
+
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+body {
+  text-wrap: pretty;
+}
+
+/* מספרים ותאריכים נשארים LTR גם בתוך משפט בעברית. */
+.ltr-nums {
+  unicode-bidi: isolate;
+  direction: ltr;
+  display: inline-block;
+}
